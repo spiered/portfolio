@@ -67,10 +67,10 @@ export default function About() {
               My academic journey has been complemented by hands-on experiences, such as my internship at BNP Paribas CIB, where I was involved in counterparty credit risk analysis. These experiences have deepened my understanding of financial systems and my desire to explore the intersection of finance and technology.
             </p>
             <p>
-              Beyond finance, I’m also drawn to entrepreneurship. I’ve had the opportunity to co-found the "BX Investment Club" at Ecole Polytechnique, where I collaborate with peers to explore investment strategies and the latest financial technologies. This experience has fueled my ambition to one day lead innovative ventures in the finance sector or beyond.
+              Beyond finance, I am also drawn to entrepreneurship. I have had the opportunity to co-found the BX Investment Club at Ecole Polytechnique, where I collaborate with peers to explore investment strategies and the latest financial technologies. This experience has fueled my ambition to one day lead innovative ventures in the finance sector or beyond.
             </p>
             <p>
-              As I continue to build my expertise, I’m eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
+              As I continue to build my expertise, I am eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
             </p>
           </div>
         </div>
