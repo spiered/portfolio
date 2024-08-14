@@ -245,10 +245,10 @@ function Photos() {
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
-
+  // directly go to the about page
   return (
     <>
-      <Container className="mt-9">
+      {/* <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Aspiring quantitative trader with a passion for finance, technology, and entrepreneurship.
@@ -284,7 +284,7 @@ export default async function Home() {
             <Resume />
           </div>
         </div>
-      </Container>
+      </Container> */}
     </>
   )
 }

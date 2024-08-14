@@ -3,11 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-  XIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -57,13 +53,18 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Adrien Dumont. I’m passionate about finance, technology, and entrepreneurship.
+            I’m Adrien Dumont...
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-300">
             <p>
-              I’m currently studying Mathematics, Economics, and Computer Science at Ecole Polytechnique, where I’m developing a strong foundation in quantitative analysis and programming. These skills have sparked my interest in the field of finance, particularly quantitative trading, where I see a vast potential to apply mathematical models and algorithms to financial markets.
+              I’m currently studying Mathematics, Economics, and Computer
+              Science at Ecole Polytechnique, where I’m developing a strong
+              foundation in quantitative analysis and programming. These skills
+              have sparked my interest in the field of finance, particularly
+              quantitative trading, where I see a vast potential to apply
+              mathematical models and algorithms to financial markets.
             </p>
-            <p>
+            {/* <p>
               My academic journey has been complemented by hands-on experiences, such as my internship at BNP Paribas CIB, where I was involved in counterparty credit risk analysis. These experiences have deepened my understanding of financial systems and my desire to explore the intersection of finance and technology.
             </p>
             <p>
@@ -71,24 +72,89 @@ export default function About() {
             </p>
             <p>
               As I continue to build my expertise, I am eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
-            </p>
+            </p> */}
+            <div className="rounded-lg border border-zinc-700 bg-zinc-800 px-6 py-4">
+              <h3 className="text-xl font-bold">Relevant Profile Infos</h3>
+              <hr className="border-gray-500" />
+              <h4 className="mt-2">
+                <span className="font-bold">
+                  BNP Paribas CIB -{' '}
+                  <span className="italic">Global Markets Summer Intern</span>
+                </span>
+              </h4>
+              <ul className="mt-1 space-y-1 pl-6 text-sm">
+                <li>
+                  - Participation in the implementation phase of the CCR
+                  (Counterparty Credit Risk) project, including the new stress
+                  testing indicators.
+                </li>
+                <li>
+                  - Interaction with the main stakeholders of this project, GM
+                  Quantitative Research, GM Trading Risk & Strategy, and the
+                  RISK department.
+                </li>
+              </ul>
+              <h4 className="mt-4">
+                <span className="font-bold">
+                  Spoon Consulting Ltd -{' '}
+                  <span className="italic">Machine Learning Intern</span>
+                </span>
+              </h4>
+              <ul className="mt-1 space-y-1 pl-6 text-sm">
+                <li>
+                  - Participation in the implementation phase of the CCR
+                  (Counterparty Credit Risk) project, including the new stress
+                  testing indicators.
+                </li>
+                <li>
+                  - Interaction with the main stakeholders of this project, GM
+                  Quantitative Research, GM Trading Risk & Strategy, and the
+                  RISK department.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p>For more information:</p>
+              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500">
+                Download CV
+              </button>{' '}
+              <span className="mx-2">or</span>{' '}
+              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500">
+                View my projects
+              </button>
+            </div>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://twitter.com/yourprofile" icon={XIcon}>
+            <h2 className="font-bold text-zinc-800 dark:text-zinc-100">
+              Contact me!
+            </h2>
+            <hr className="my-2 border-gray-500" />
+            {/* <SocialLink href="https://twitter.com/yourprofile" icon={XIcon}>
               Follow on X
-            </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/adrien-dumont-x/" icon={LinkedInIcon} className="mt-4">
+            </SocialLink> */}
+            <SocialLink
+              target="_blank"
+              href="https://www.linkedin.com/in/adrien-dumont-x/"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Connect on LinkedIn
             </SocialLink>
-            <SocialLink href="https://github.com/yourprofile" icon={GitHubIcon} className="mt-4">
+            <SocialLink
+              target="_blank"
+              href="https://github.com/spiered"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
               Follow on GitHub
             </SocialLink>
             <SocialLink
+              target="_blank"
               href="mailto:adrien.dumont@polytechnique.edu"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              className="mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
             >
               adrien.dumont@polytechnique.edu
             </SocialLink>
