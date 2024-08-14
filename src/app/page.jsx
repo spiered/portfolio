@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { redirect } from 'next/navigation'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -245,6 +246,7 @@ function Photos() {
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
+  redirect(`/about`)
   // directly go to the about page
   return (
     <>
