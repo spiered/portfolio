@@ -73,16 +73,18 @@ export default function About() {
             <p>
               As I continue to build my expertise, I am eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
             </p> */}
-            <div className="rounded-lg border border-zinc-700 bg-zinc-800 px-6 py-4">
-              <h3 className="text-xl font-bold">Relevant Profile Infos</h3>
-              <hr className="border-gray-500" />
-              <h4 className="mt-2">
+            <div className="text-gray-700 rounded-lg border bg-zinc-100 px-6 py-4 dark:border-zinc-700 dark:bg-zinc-800">
+              <h3 className="text-xl font-bold text-black dark:text-white">
+                Relevant Profile Infos
+              </h3>
+              <hr className="border-gray-300 dark:border-gray-500" />
+              <h4 className="mt-2 text-black dark:text-white">
                 <span className="font-bold">
                   BNP Paribas CIB -{' '}
                   <span className="italic">Global Markets Summer Intern</span>
                 </span>
               </h4>
-              <ul className="mt-1 space-y-1 pl-6 text-sm">
+              <ul className="mt-1 space-y-1 pl-6 text-sm text-black dark:text-gray-300">
                 <li>
                   - Participation in the implementation phase of the CCR
                   (Counterparty Credit Risk) project, including the new stress
@@ -94,13 +96,13 @@ export default function About() {
                   RISK department.
                 </li>
               </ul>
-              <h4 className="mt-4">
+              <h4 className="mt-4 text-black dark:text-white">
                 <span className="font-bold">
                   Spoon Consulting Ltd -{' '}
                   <span className="italic">Machine Learning Intern</span>
                 </span>
               </h4>
-              <ul className="mt-1 space-y-1 pl-6 text-sm">
+              <ul className="mt-1 space-y-1 pl-6 text-sm text-black dark:text-gray-300">
                 <li>
                   - Participation in the implementation phase of the CCR
                   (Counterparty Credit Risk) project, including the new stress
@@ -115,11 +117,11 @@ export default function About() {
             </div>
             <div>
               <p>For more information:</p>
-              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500">
+              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500 hover:text-white">
                 Download CV
               </button>{' '}
               <span className="mx-2">or</span>{' '}
-              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500">
+              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500 hover:text-white">
                 View my projects
               </button>
             </div>
