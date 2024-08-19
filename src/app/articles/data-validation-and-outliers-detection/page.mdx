@@ -1,0 +1,182 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import designSystem from '../outliers.png'
+
+export const article = {
+  author: 'Adrien Dumont',
+  date: '2024-09-05',
+  title: 'Outliers detection and Data Validation with Python',
+  description:
+    'Data validation and outliers detection often goes hand in hand. It is a crucial part of the chain when going for production.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+If I learned one thing this summer during my internship at BNP Paribas CIB in Global Markets in the Technology Platforms team, it's that ensuring good data quality is essential, especially for a financial institution like a bank.
+
+<Image src={designSystem} alt="" />
+
+Indeed, errors in data can lead to significant financial losses for the bank, which is why substantial time and resources are allocated to data validation and outlier detection.
+
+## Understanding Outliers in Data
+
+Outliers are data points that differ significantly from the rest of the dataset. They can occur due to variability in the data, errors, or other anomalies. While some outliers are simply rare events, others may be indicative of issues such as data entry errors, system glitches, or fraudulent activities. 
+
+### Why Outliers Matter in Finance
+
+In the financial industry, outliers can have a profound impact. For example:
+
+- **Risk Assessment**: Outliers can skew risk models, leading to under- or overestimation of potential risks.
+- **Trading Algorithms**: Outliers can trigger incorrect trades if not properly handled, leading to significant financial losses.
+- **Fraud Detection**: Identifying outliers can be crucial in detecting fraudulent transactions or market manipulations.
+
+Given these implications, outlier detection is a critical step in data validation.
+
+## Techniques for Outlier Detection
+
+There are several techniques for detecting outliers, ranging from simple statistical methods to more sophisticated machine learning models.
+
+### 1. Z-Score Method
+
+The Z-Score method measures how many standard deviations a data point is from the mean. A data point is considered an outlier if its Z-Score is beyond a certain threshold (typically ±3).
+
+```python
+import numpy as np
+
+# Example data
+data = np.array([10, 12, 12, 13, 12, 13, 16, 20, 29, 100])
+
+# Calculate mean and standard deviation
+mean = np.mean(data)
+std_dev = np.std(data)
+
+# Calculate Z-scores
+z_scores = [(x - mean) / std_dev for x in data]
+
+# Identify outliers
+outliers = [data[i] for i in range(len(z_scores)) if abs(z_scores[i]) > 3]
+print("Outliers using Z-score method:", outliers)
+```
+
+### 2. Interquartile Range (IQR) Method
+
+The IQR method uses the range between the first and third quartiles to identify outliers. Data points that fall below the first quartile minus 1.5 times the IQR or above the third quartile plus 1.5 times the IQR are considered outliers.
+
+```python
+import numpy as np
+
+# Example data
+data = np.array([10, 12, 12, 13, 12, 13, 16, 20, 29, 100])
+
+# Calculate IQR
+Q1 = np.percentile(data, 25)
+Q3 = np.percentile(data, 75)
+IQR = Q3 - Q1
+
+# Define outlier bounds
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+# Identify outliers
+outliers = data[(data < lower_bound) | (data > upper_bound)]
+print("Outliers using IQR method:", outliers)
+```
+
+### 3. Isolation Forest
+
+Isolation Forest is a machine learning model specifically designed for anomaly detection. It works by isolating observations by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature.
+
+```python
+from sklearn.ensemble import IsolationForest
+
+# Example data (reshaped for model)
+data = np.array([10, 12, 12, 13, 12, 13, 16, 20, 29, 100]).reshape(-1, 1)
+
+# Fit the model
+iso_forest = IsolationForest(contamination=0.1)
+pred = iso_forest.fit_predict(data)
+
+# Identify outliers
+outliers = data[pred == -1]
+print("Outliers using Isolation Forest:", outliers.flatten())
+```
+
+### 4. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+DBSCAN is a clustering algorithm that can be used to detect outliers by identifying points that lie alone in low-density regions.
+
+```python
+from sklearn.cluster import DBSCAN
+
+# Example data (reshaped for model)
+data = np.array([10, 12, 12, 13, 12, 13, 16, 20, 29, 100]).reshape(-1, 1)
+
+# Fit the model
+dbscan = DBSCAN(eps=3, min_samples=2)
+clusters = dbscan.fit_predict(data)
+
+# Identify outliers
+outliers = data[clusters == -1]
+print("Outliers using DBSCAN:", outliers.flatten())
+```
+
+## Data Validation Process
+
+Outlier detection is a key component of the data validation process. However, data validation also involves ensuring that the data conforms to expected formats, ranges, and logical consistency rules.
+
+### Steps in Data Validation
+
+1. **Schema Validation**: Ensure that the data conforms to the expected schema, including data types, mandatory fields, and relationships.
+   
+2. **Range and Constraint Checks**: Validate that the values fall within acceptable ranges or meet specified constraints. For example, checking that all dates are in the past or that financial figures are within expected limits.
+
+3. **Duplicate Detection**: Identify and handle duplicate records that could skew analyses or cause errors in downstream processes.
+
+4. **Consistency Checks**: Ensure that data across different fields and records is consistent. For example, checking that the sum of individual transaction amounts matches the total transaction value.
+
+5. **Outlier Detection**: Identify and handle outliers using one or more of the methods described above.
+
+### Implementing Data Validation in Python
+
+Below is an example of how you might implement a simple data validation process in Python:
+
+```python
+import pandas as pd
+from sklearn.ensemble import IsolationForest
+
+# Example data
+data = {
+    'transaction_id': [1, 2, 3, 4, 5],
+    'amount': [100, 150, 120, 110, 10000],
+    'date': ['2024-09-01', '2024-09-01', '2024-09-02', '2024-09-03', '2024-09-03'],
+    'customer_id': [123, 124, 123, 125, 123]
+}
+
+df = pd.DataFrame(data)
+
+# Range check: Amounts should be between 0 and 1000
+df['amount_valid'] = df['amount'].between(0, 1000)
+
+# Duplicate detection
+df['is_duplicate'] = df.duplicated(['transaction_id', 'customer_id'])
+
+# Outlier detection using Isolation Forest
+iso_forest = IsolationForest(contamination=0.1)
+df['is_outlier'] = iso_forest.fit_predict(df[['amount']])
+
+print(df)
+```
+
+### Conclusion
+
+Outlier detection and data validation are crucial steps in ensuring the integrity and reliability of data, particularly in finance. By employing robust methods such as Z-Score, IQR, Isolation Forest, and DBSCAN, we can identify anomalies that could otherwise lead to significant errors or financial losses.
+
+Implementing these techniques as part of a comprehensive data validation strategy helps maintain the accuracy and consistency of data, thereby supporting better decision-making and reducing the risk of costly mistakes.
+
+---
+
+Adrien DUMONT

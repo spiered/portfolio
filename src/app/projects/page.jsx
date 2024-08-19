@@ -25,9 +25,9 @@ const projects = [
     logo: logoTradingCompetition,
   },
   {
-    name: 'Machine Learning Pipeline',
+    name: 'Evolution Simulator',
     description:
-      'Developed a real-time machine learning pipeline for object detection, enhancing accuracy through advanced statistical techniques.',
+      'Developped an Evolution Simulator in C++.',
     link: { href: 'https://github.com/EvolutionSimulator/EvolutionSimulator', label: 'github.com' },
     logo: logoMLPipeline,
   },
