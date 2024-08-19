@@ -73,7 +73,7 @@ export default function About() {
             <p>
               As I continue to build my expertise, I am eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
             </p> */}
-            <div className="text-gray-700 rounded-lg border bg-zinc-100 px-6 py-4 dark:border-zinc-700 dark:bg-zinc-800">
+            <div className="rounded-lg border bg-zinc-50 px-6 py-4 text-gray-700 dark:border-zinc-700 dark:bg-zinc-800">
               <h3 className="text-xl font-bold text-black dark:text-white">
                 Relevant Profile Infos
               </h3>
@@ -84,7 +84,7 @@ export default function About() {
                   <span className="italic">Global Markets Summer Intern</span>
                 </span>
               </h4>
-              <ul className="mt-1 space-y-1 pl-6 text-sm text-black dark:text-gray-300">
+              <ul className="mt-1 pl-6 pr-4 text-justify text-sm text-black dark:text-gray-300">
                 <li>
                   - Participation in the implementation phase of the CCR
                   (Counterparty Credit Risk) project, including the new stress
@@ -98,32 +98,34 @@ export default function About() {
               </ul>
               <h4 className="mt-4 text-black dark:text-white">
                 <span className="font-bold">
-                  Spoon Consulting Ltd -{' '}
-                  <span className="italic">Machine Learning Intern</span>
+                  IMC Trading Competition -{' '}
+                  <span className="italic">Prosperity Talent</span>
                 </span>
               </h4>
-              <ul className="mt-1 space-y-1 pl-6 text-sm text-black dark:text-gray-300">
+              <ul className="mt-1 pl-6 text-sm text-black dark:text-gray-300">
                 <li>
-                  - Participation in the implementation phase of the CCR
-                  (Counterparty Credit Risk) project, including the new stress
-                  testing indicators.
+                  - Employed advanced algorithmic trading strategies (Mean
+                  Reversion, Arbitrage..)
                 </li>
-                <li>
-                  - Interaction with the main stakeholders of this project, GM
-                  Quantitative Research, GM Trading Risk & Strategy, and the
-                  RISK department.
-                </li>
+                <li>- Ranked fifth nationally and 80th globally over more than 3000 teams</li>
               </ul>
             </div>
             <div>
-              <p>For more information:</p>
-              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500 hover:text-white">
+              <p className="mb-2">For more information:</p>
+              <a
+                href="/Curriculum_vitae_Adrien_Dumont.pdf"
+                download="Curriculum_vitae_Adrien_Dumont.pdf"
+                className="mt-2 rounded border border-gray-500 px-4 py-2 hover:bg-gray-500 hover:text-white"
+              >
                 Download CV
-              </button>{' '}
+              </a>
               <span className="mx-2">or</span>{' '}
-              <button className="mt-2 rounded border border-gray-500 px-4 py-1 hover:bg-gray-500 hover:text-white">
+              <a
+                href="/projects"
+                className="mt-2 rounded border border-gray-500 px-4 py-2 hover:bg-gray-500 hover:text-white"
+              >
                 View my projects
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -156,9 +158,17 @@ export default function About() {
               target="_blank"
               href="mailto:adrien.dumont@polytechnique.edu"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
+              className="mt-6 border-t border-zinc-100 pt-2 dark:border-zinc-700/40"
             >
               adrien.dumont@polytechnique.edu
+            </SocialLink>
+            <SocialLink
+              target="_blank"
+              href="mailto:adrien.dumont@polytechnique.edu"
+              icon={MailIcon}
+              className="mt-2"
+            >
+              +33 7 86 89 91 13
             </SocialLink>
           </ul>
         </div>
