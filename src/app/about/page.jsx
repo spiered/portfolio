@@ -61,23 +61,42 @@ export default function About() {
               Science at Ecole Polytechnique, where I’m developing a strong
               foundation in quantitative analysis and programming. These skills
               have sparked my interest in the field of finance, particularly
-              quantitative trading, where I see a vast potential to apply
-              mathematical models and algorithms to financial markets.
+              market and quantitative finance as well as in other scientific fields like data science.
             </p>
-            {/* <p>
-              My academic journey has been complemented by hands-on experiences, such as my internship at BNP Paribas CIB, where I was involved in counterparty credit risk analysis. These experiences have deepened my understanding of financial systems and my desire to explore the intersection of finance and technology.
-            </p>
-            <p>
-              Beyond finance, I am also drawn to entrepreneurship. I have had the opportunity to co-found the BX Investment Club at Ecole Polytechnique, where I collaborate with peers to explore investment strategies and the latest financial technologies. This experience has fueled my ambition to one day lead innovative ventures in the finance sector or beyond.
-            </p>
-            <p>
-              As I continue to build my expertise, I am eager to pursue opportunities that will allow me to contribute to the financial industry, particularly in roles that leverage my skills in quantitative analysis and programming. I’m also excited by the prospect of combining these interests with entrepreneurial endeavors, aiming to make an impact through innovation and leadership.
-            </p> */}
             <div className="rounded-lg border bg-zinc-50 px-6 py-4 text-gray-700 dark:border-zinc-700 dark:bg-zinc-800">
               <h3 className="text-xl font-bold text-black dark:text-white">
-                Relevant Profile Infos
+                Relevant Experiences
               </h3>
               <hr className="border-gray-300 dark:border-gray-500" />
+              <h4 className="mt-2 text-black dark:text-white">
+                <span className="font-bold">
+                  Banque de France -{' '}
+                  <span className="italic">Financial Economist Intern</span>
+                </span>
+              </h4>
+              <ul className="mt-1 pl-6 pr-4 text-justify text-sm text-black dark:text-gray-300">
+                <li>
+                  - Bachelor Thesis
+                </li>
+              </ul>
+              <h4 className="mt-2 text-black dark:text-white">
+                <span className="font-bold">
+                  Center for Economic Research and Statistics -{' '}
+                  <span className="italic">Research Assistant</span>
+                </span>
+              </h4>
+              <ul className="mt-1 pl-6 pr-4 text-justify text-sm text-black dark:text-gray-300">
+                <li>
+                  - Part of the Blockchain@X research team, supervised by Julien Prat and Natkamon Tovanich
+                </li>
+                <li>
+                  - Evaluating user risk propagation in dencentralized lending networks
+                </li>
+                <li>
+                  - Used network analysis (Python, NetworkX) to assess systemic risk; applied Random Forest models
+                  for predictive analysis of user contagion
+                </li>
+              </ul>
               <h4 className="mt-2 text-black dark:text-white">
                 <span className="font-bold">
                   BNP Paribas CIB -{' '}
@@ -95,19 +114,6 @@ export default function About() {
                   Quantitative Research, GM Trading Risk & Strategy, and the
                   RISK department.
                 </li>
-              </ul>
-              <h4 className="mt-4 text-black dark:text-white">
-                <span className="font-bold">
-                  IMC Trading Competition -{' '}
-                  <span className="italic">Prosperity Talent</span>
-                </span>
-              </h4>
-              <ul className="mt-1 pl-6 text-sm text-black dark:text-gray-300">
-                <li>
-                  - Employed advanced algorithmic trading strategies (Mean
-                  Reversion, Arbitrage..)
-                </li>
-                <li>- Ranked fifth nationally and 80th globally over more than 3000 teams</li>
               </ul>
             </div>
             <div>
